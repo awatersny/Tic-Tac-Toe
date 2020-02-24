@@ -90,8 +90,6 @@ const winner = sqEltArr => {
   }
 };
 
-const endGame = () => {};
-
 const changeTurn = () => {
   if (turn === "X") {
     turn = "O";
@@ -129,6 +127,7 @@ newGame.onclick = () => {
     obj.elt.innerHTML = null;
     obj.elt.style = "color : white";
   });
+  message.innerHTML = `Player ${turn} goes first.`;
   gameOver = false;
 };
 

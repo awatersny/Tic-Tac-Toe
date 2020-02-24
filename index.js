@@ -1,5 +1,6 @@
 let turn = "X";
 let gameOver = false;
+let emptySqs = 9;
 const newGame = document.getElementById("newGame");
 const message = document.querySelector("h2");
 
@@ -80,21 +81,29 @@ const winner = sqEltArr => {
     sqEltArr[0].innerHTML === sqEltArr[1].innerHTML &&
     sqEltArr[1].innerHTML === sqEltArr[2].innerHTML
   ) {
-    sqEltArr[0].style = "color : gold";
-    sqEltArr[1].style = "color : gold";
-    sqEltArr[2].style = "color : gold";
+    sqEltArr.forEach(elt => {
+      elt.style = "color : gold";
+    });
     changeTurn();
     message.innerHTML = `Player ${turn} wins!!!`;
-    changeTurn();
     gameOver = true;
+  }
+};
+
+const drawCheck = () => {
+  if (emptySqs === 0) {
+    message.innerHTML = `This match is a draw.`;
+    message.style = "color: black";
   }
 };
 
 const changeTurn = () => {
   if (turn === "X") {
     turn = "O";
+    message.style = "color: blue";
   } else if (turn === "O") {
     turn = "X";
+    message.style = "color: red";
   }
 };
 
@@ -106,18 +115,15 @@ const playerMove = square => {
       !gameOver
     ) {
       square.elt.innerText = turn;
+      emptySqs--;
       changeTurn();
       message.innerHTML = `Player ${turn}'s turn.`;
-
-      if (turn === "O") {
-        message.style = "color: blue";
-      } else {
-        message.style = "color: red";
-      }
 
       square.combos.forEach(elt => {
         winner(elt);
       });
+
+      drawCheck();
     }
   };
 };
@@ -127,8 +133,10 @@ newGame.onclick = () => {
     obj.elt.innerHTML = null;
     obj.elt.style = "color : white";
   });
+  changeTurn();
   message.innerHTML = `Player ${turn} goes first.`;
   gameOver = false;
+  emptySqs = 9;
 };
 
 sqArr.forEach(obj => {

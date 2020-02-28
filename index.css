@@ -2,8 +2,10 @@ body {
   background-color: silver;
   margin: 0px;
   padding: 0px;
+  height: 100%;
   align-items: center;
   min-width: 900px;
+  min-height: 100vh;
   border: 4mm ridge;
   border-color: #22bbff;
 }
@@ -33,7 +35,7 @@ td.square {
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 170px;
+  font-size: 175px;
   text-align: center;
   height: 200px;
   width: 200px;
@@ -42,6 +44,7 @@ td.square {
   box-shadow: 10px 10px black;
   min-width: 200px;
   min-height: 200px;
+  padding: 0px;
 }
 
 table {
@@ -62,6 +65,6 @@ button#newGame {
 
 div.button {
   margin-top: 100px;
-  margin-bottom: 16.2%;
+  margin-bottom: 22.2%;
   text-align: center;
 }

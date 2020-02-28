@@ -5,7 +5,7 @@ body {
   height: 100%;
   align-items: center;
   min-width: 900px;
-  min-height: 100vh;
+  min-height: 100vmax;
   border: 4mm ridge;
   border-color: #22bbff;
 }

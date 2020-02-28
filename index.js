@@ -94,6 +94,7 @@ const drawCheck = () => {
   if (emptySqs === 0) {
     message.innerHTML = `This match is a draw.`;
     message.style = "color: black";
+    gameOver = true;
   }
 };
 
@@ -118,12 +119,12 @@ const playerMove = square => {
       emptySqs--;
       changeTurn();
       message.innerHTML = `Player ${turn}'s turn.`;
-
+      if (emptySqs === 0) {
+        drawCheck();
+      }
       square.combos.forEach(elt => {
         winner(elt);
       });
-
-      drawCheck();
     }
   };
 };

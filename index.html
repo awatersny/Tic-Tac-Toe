@@ -5,29 +5,33 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <div class="frame"></div>
+
     <h1>Tic-Tac-Toe</h1>
     <h2>Player X goes first.</h2>
-    <table>
-      <thead></thead>
-      <tbody class="grid">
-        <tr>
-          <td class="square" id="topLft"></td>
-          <td class="square" id="topMid"></td>
-          <td class="square" id="topRgt"></td>
-        </tr>
-        <tr>
-          <td class="square" id="midLft"></td>
-          <td class="square" id="midMid"></td>
-          <td class="square" id="midRgt"></td>
-        </tr>
-        <tr>
-          <td class="square" id="btmLft"></td>
-          <td class="square" id="btmMid"></td>
-          <td class="square" id="btmRgt"></td>
-        </tr>
-      </tbody>
-      <tfoot></tfoot>
-    </table>
+    <div class="board">
+      <table>
+        <thead></thead>
+        <tbody class="grid">
+          <tr>
+            <td class="square" id="topLft"></td>
+            <td class="square" id="topMid"></td>
+            <td class="square" id="topRgt"></td>
+          </tr>
+          <tr>
+            <td class="square" id="midLft"></td>
+            <td class="square" id="midMid"></td>
+            <td class="square" id="midRgt"></td>
+          </tr>
+          <tr>
+            <td class="square" id="btmLft"></td>
+            <td class="square" id="btmMid"></td>
+            <td class="square" id="btmRgt"></td>
+          </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
     <div class="button">
       <button id="newGame">New Game</button>
     </div>
